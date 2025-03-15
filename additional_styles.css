@@ -489,3 +489,10 @@
     background-color: #fff4e0;
   }
 }
+
+@media (max-width: 380px) {
+  .letter-rack .tile {
+    min-height: 52px;
+    min-width: 52px;
+  }
+}

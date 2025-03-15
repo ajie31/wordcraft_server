@@ -1298,12 +1298,23 @@ function setupExtraMobileHandlers() {
 function setupPaginatedTileRack() {
   if (!gameState.isMobileDevice) return;
 
+  // setup screen width
+  const screenWidth = screen.width;
   // Store pagination state in gameState
-  gameState.mobileTileRack = {
-    currentPage: 0,
-    tilesPerPage: 10, // Show max 8 tiles at once (2 rows of 4)
-    totalPages: 0,
-  };
+
+  if (screenWidth > 768) {
+    gameState.mobileTileRack = {
+      currentPage: 0,
+      tilesPerPage: 16, // Show all at screen bigger than 768
+      totalPages: 0,
+    };
+  } else {
+    gameState.mobileTileRack = {
+      currentPage: 0,
+      tilesPerPage: 10, // Show max 10 tiles at once (2 rows of 4)
+      totalPages: 0,
+    };
+  }
 
   // Add navigation buttons to the tile rack
   const letterRack = document.getElementById("letterRack");
