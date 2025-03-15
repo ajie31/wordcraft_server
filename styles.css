@@ -799,8 +799,8 @@ body {
   /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
   /* width: calc((100vw - 40px) / 11.58);  Changed from 7 to 5 */
   /* height: calc((100vw - 40px) / 11.58);  Changed from 7 to 5 */
-  width: 18%;
-  height: 18%;
+  width: 4.45rem;
+  height: 4.45rem;
   font-size: 2.55em;
   background-color: var(--tile-placed);
   position: absolute;
