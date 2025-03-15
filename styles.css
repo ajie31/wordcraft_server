@@ -307,6 +307,12 @@ body {
 .board-cell.tw {
   background-color: var(--special-tw);
 }
+.board-cell.drop-hover {
+  background-color: var(--hover-color);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(58, 134, 255, 0.5);
+  z-index: 5;
+}
 .board-cell.valid-word-cell {
   background-color: var(--valid-word-color);
 }
@@ -314,13 +320,6 @@ body {
   background-color: var(--invalid-word-color);
   box-shadow: 0 0 0 3px var(--invalid-word-color);
   animation: shake 0.3s ease;
-}
-
-.board-cell.drop-hover {
-  background-color: var(--hover-color);
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(58, 134, 255, 0.5);
-  z-index: 5;
 }
 
 .letter-rack {
