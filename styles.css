@@ -170,7 +170,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   flex: 0 0 auto;
-  max-width: 300px;
+  max-width: 374px;
   width: 100%;
 }
 
@@ -1371,7 +1371,7 @@ body {
   font-size: 0.8rem;
   font-weight: normal;
 }
-@media (min-width: 768px) {
+@media (max-width: 907px) {
   .tile-area {
     max-width: 420px;
   }
