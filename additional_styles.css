@@ -766,7 +766,7 @@ button.overlay-menu {
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 400px) {
   .game-header .header-button-group {
     margin-left: 0.45rem;
   }
