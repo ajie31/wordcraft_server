@@ -33,6 +33,62 @@
     ></script>
   </head>
   <body>
+    <button
+      id="overlayMenu"
+      class="overlay-menu"
+      onclick="toggleMenu()"
+      style="display: none"
+    ></button>
+    <div id="mobileNavMenu" class="mobile-nav-menu" style="display: none">
+      <div class="anchor-arrow">
+        <svg
+          width="26"
+          height="11"
+          viewBox="0 0 26 11"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M13 0L25.9904 10.5H0.00961876L13 0Z" fill="white" />
+        </svg>
+      </div>
+      <div class="nav-menu" id="navMenu">
+        <div id="mobileInteractionToggle" class="mobile-interaction-toggle">
+          <span class="input-mode-label">Input mode</span>
+          <div class="interaction-btn-wrap">
+            <button id="tapModeBtnL" class="interaction-btn active">
+              Tap Mode
+            </button>
+            <button id="dragModeBtnL" class="interaction-btn">
+              Drag and Drop
+            </button>
+          </div>
+        </div>
+        <div class="nav-menu-rules">
+          <span class="input-mode-label">How to Play</span>
+          <button
+            class="btn"
+            id="rulesBtnL"
+            data-intro="After submitting, you'll see your final score and can enter your name for the daily leaderboard. Each day brings a new challenge with the same tiles for everyone, so you can compare your skill with others. Have fun!"
+            data-step="7"
+          >
+            <svg
+              width="20"
+              height="16"
+              viewBox="0 0 20 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 8L2.54 5.02L3 16H1L1.48 4.59L0 4L10 0L20 4L10 8ZM10 3C9.45 3 9 3.22 9 3.5C9 3.78 9.45 4 10 4C10.55 4 11 3.78 11 3.5C11 3.22 10.55 3 10 3ZM10 9L15.57 6.77C16.28 7.71 16.77 8.84 16.93 10.07C16.63 10.03 16.32 10 16 10C13.45 10 11.22 11.37 10 13.41C9.38045 12.371 8.50187 11.5106 7.45018 10.9129C6.39849 10.3152 5.20968 10.0006 4 10C3.68 10 3.37 10.03 3.07 10.07C3.23 8.84 3.72 7.71 4.43 6.77L10 9Z"
+                fill="white"
+              />
+            </svg>
+
+            Show Tutorial
+          </button>
+        </div>
+      </div>
+    </div>
     <div id="toast" class="toast"></div>
     <div id="achievementToast" class="achievement-toast"></div>
 
@@ -42,25 +98,54 @@
       data-step="1"
     >
       <div class="game-header">
-        <div class="display-logo">
-          <img src="src/icons/wordcraft_logo.svg" alt="wordcraft_logo" />
-        </div>
-        <div class="header-score-btn-group">
+        <div class="logo-score-group">
+          <div class="display-logo">
+            <img src="src/icons/wordcraft_logo.svg" alt="wordcraft_logo" />
+          </div>
           <div class="score-display">
             <span class="score-text">Score</span
             ><span class="score-value">0</span>
           </div>
-          <div class="header-button-group">
-            <div class="btn-maximize-display">
-              <button>
-                <span class="material-symbols-outlined">crop_free</span>
-              </button>
-            </div>
-            <div class="btn-menu">
-              <button>
-                <span class="material-symbols-outlined">menu</span>
-              </button>
-            </div>
+        </div>
+
+        <div class="header-button-group">
+          <div id="mobileInteractionToggle" class="mobile-interaction-toggle">
+            <span class="input-mode-label">Input mode</span>
+            <button id="tapModeBtn" class="interaction-btn active">
+              Tap Mode
+            </button>
+            <button id="dragModeBtn" class="interaction-btn">Drag Mode</button>
+          </div>
+          <button
+            class="btn"
+            id="rulesBtn"
+            data-intro="After submitting, you'll see your final score and can enter your name for the daily leaderboard. Each day brings a new challenge with the same tiles for everyone, so you can compare your skill with others. Have fun!"
+            data-step="7"
+          >
+            <svg
+              width="20"
+              height="16"
+              viewBox="0 0 20 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 8L2.54 5.02L3 16H1L1.48 4.59L0 4L10 0L20 4L10 8ZM10 3C9.45 3 9 3.22 9 3.5C9 3.78 9.45 4 10 4C10.55 4 11 3.78 11 3.5C11 3.22 10.55 3 10 3ZM10 9L15.57 6.77C16.28 7.71 16.77 8.84 16.93 10.07C16.63 10.03 16.32 10 16 10C13.45 10 11.22 11.37 10 13.41C9.38045 12.371 8.50187 11.5106 7.45018 10.9129C6.39849 10.3152 5.20968 10.0006 4 10C3.68 10 3.37 10.03 3.07 10.07C3.23 8.84 3.72 7.71 4.43 6.77L10 9Z"
+                fill="white"
+              />
+            </svg>
+
+            How to Play
+          </button>
+          <div class="btn-maximize-display">
+            <button>
+              <span class="material-symbols-outlined">crop_free</span>
+            </button>
+          </div>
+          <div class="btn-menu">
+            <button onclick="toggleMenu()">
+              <span class="material-symbols-outlined">menu</span>
+            </button>
           </div>
         </div>
       </div>
@@ -89,18 +174,7 @@
             <div id="validationErrors" class="validation-errors"></div>
 
             <!-- Mobile Interaction Mode Toggle -->
-            <div
-              id="mobileInteractionToggle"
-              class="mobile-interaction-toggle"
-              style="display: none"
-            >
-              <button id="tapModeBtn" class="interaction-btn active">
-                Tap Mode
-              </button>
-              <button id="dragModeBtn" class="interaction-btn">
-                Drag Mode
-              </button>
-            </div>
+
             <div class="game-controls-mobile">
               <button
                 class="btn btn-primary"
@@ -161,28 +235,6 @@
                     fill="#ECA449"
                   />
                 </svg>
-              </button>
-              <button
-                class="btn"
-                id="rulesBtn"
-                data-intro="After submitting, you'll see your final score and can enter your name for the daily leaderboard. Each day brings a new challenge with the same tiles for everyone, so you can compare your skill with others. Have fun!"
-                data-step="7"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="16" x2="12" y2="12"></line>
-                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-                How to Play
               </button>
             </div>
             <div class="page-letter-wrap">
@@ -693,6 +745,21 @@
     <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore-compat.js"></script>
 
     <script>
+      // menu mobile controller
+
+      function toggleMenu() {
+        console.log("menu open");
+        const navNemu = document.getElementById("mobileNavMenu");
+        const overlay = document.getElementById("overlayMenu");
+        if (overlay.style.display === "none") {
+          overlay.style.display = "block"; // Hide the overlay
+          navNemu.style.display = "flex";
+        } else {
+          overlay.style.display = "none"; // Show the overlay
+          navNemu.style.display = "none";
+        }
+      }
+
       // Your web app's Firebase configuration
       const firebaseConfig = {
         apiKey: "AIzaSyCJHbFjv4QqkwdF9uutiCEJtU471lHZWKU",

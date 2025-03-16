@@ -933,9 +933,9 @@ function setupExtraMobileHandlers() {
 
   // Show the interaction mode toggle for mobile users
   const mobileToggle = document.getElementById("mobileInteractionToggle");
-  if (mobileToggle) {
-    mobileToggle.style.display = "none"; //display from flex to none for now according to design
-  }
+  // if (mobileToggle) {
+  //   mobileToggle.style.display = "none"; //display from flex to none for now according to design
+  // }
 
   // Load previous mode preference
   const savedMode = localStorage.getItem("interactionMode") || "tap";
@@ -949,6 +949,15 @@ function setupExtraMobileHandlers() {
   document.getElementById("dragModeBtn").addEventListener("click", function () {
     interactionMode.updateMode("drag");
   });
+  document.getElementById("tapModeBtnL").addEventListener("click", function () {
+    interactionMode.updateMode("tap");
+  });
+
+  document
+    .getElementById("dragModeBtnL")
+    .addEventListener("click", function () {
+      interactionMode.updateMode("drag");
+    });
 
   // COMPLETELY NEW APPROACH USING GLOBAL EVENT CAPTURING
 
@@ -1333,6 +1342,7 @@ function setupPaginatedTileRack() {
   // Previous page button
   const prevBtn = document.createElement("button");
   prevBtn.className = "tile-nav-btn prev-btn";
+  prevBtn.id - "prevBtn";
 
   prevBtn.addEventListener("click", function () {
     navigateTileRack(-1);
@@ -1348,6 +1358,7 @@ function setupPaginatedTileRack() {
   // Next page button
   const nextBtn = document.createElement("button");
   nextBtn.className = "tile-nav-btn next-btn";
+  nextBtn.id = "nextBtn";
   nextBtn.addEventListener("click", function () {
     navigateTileRack(1);
   });
@@ -1460,7 +1471,9 @@ function updateMobileTileRack(direction) {
   gameState.mobileTileRack.totalPages = Math.ceil(
     gameState.letters.length / tilesPerPage
   );
-
+  const nextBtn = document.getElementById("nextBtn");
+  const prevBtn = document.getElementById("prevBtn");
+  console.log(nextBtn);
   // If empty or a single page, hide navigation
   const navElement = document.querySelector(".tile-rack-nav");
   if (
@@ -1492,6 +1505,10 @@ function updateMobileTileRack(direction) {
         pageBulletList.push(pageBulletInactive);
       }
     }
+
+    prevBtn.disabled = gameState.mobileTileRack.currentPage === 0;
+
+    nextBtn.disabled = gameState.mobileTileRack.currentPage + 1 === totalPages;
 
     //change the radius here from 0.5rem into 0.75 rem
 
