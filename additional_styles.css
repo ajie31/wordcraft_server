@@ -766,7 +766,7 @@ button.overlay-menu {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 390px) {
   .game-header .header-button-group {
     margin-left: 0.45rem;
   }
@@ -774,6 +774,10 @@ button.overlay-menu {
     min-height: 50px;
     min-width: 50px;
   }
+  .game-header .score-display{
+	  margin-left:10%;
+  }
+
 }
 
 @media (max-width: 359px) {
