@@ -1471,9 +1471,7 @@ function updateMobileTileRack(direction) {
   gameState.mobileTileRack.totalPages = Math.ceil(
     gameState.letters.length / tilesPerPage
   );
-  const nextBtn = document.getElementById("nextBtn");
-  const prevBtn = document.getElementById("prevBtn");
-  console.log(nextBtn);
+ 
   // If empty or a single page, hide navigation
   const navElement = document.querySelector(".tile-rack-nav");
   if (
@@ -1506,9 +1504,6 @@ function updateMobileTileRack(direction) {
       }
     }
 
-    prevBtn.disabled = gameState.mobileTileRack.currentPage === 0;
-
-    nextBtn.disabled = gameState.mobileTileRack.currentPage + 1 === totalPages;
 
     //change the radius here from 0.5rem into 0.75 rem
 
