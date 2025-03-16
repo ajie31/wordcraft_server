@@ -1682,10 +1682,14 @@ const interactionMode = {
     if (newMode === "tap") {
       document.getElementById("tapModeBtn").classList.add("active");
       document.getElementById("dragModeBtn").classList.remove("active");
+      document.getElementById("tapModeBtnL").classList.add("active");
+      document.getElementById("dragModeBtnL").classList.remove("active");
       showToast("Tap Mode: Select a tile, then tap a cell to place it");
     } else {
       document.getElementById("tapModeBtn").classList.remove("active");
       document.getElementById("dragModeBtn").classList.add("active");
+      document.getElementById("tapModeBtnL").classList.remove("active");
+      document.getElementById("dragModeBtnL").classList.add("active");
       showToast("Drag Mode: Drag tiles directly to place them");
     }
 
