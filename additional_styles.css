@@ -411,9 +411,11 @@ button.overlay-menu {
     flex-basis: 80%;
     padding: 0;
     box-shadow: none;
-	background:none;
+	
   }
-
+.tile-area .letter-rack {
+	background:none;
+}
   .page-letter-wrap .prev-rack-nav {
     order: 1px;
     flex-basis: 10%;
