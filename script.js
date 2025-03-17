@@ -1314,7 +1314,7 @@ function setupPaginatedTileRack() {
   if (screenWidth > 768) {
     gameState.mobileTileRack = {
       currentPage: 0,
-      tilesPerPage: 16, // Show all at screen bigger than 768
+      tilesPerPage: 19, // Show all at screen bigger than 768
       totalPages: 0,
     };
   } else {
@@ -1471,7 +1471,7 @@ function updateMobileTileRack(direction) {
   gameState.mobileTileRack.totalPages = Math.ceil(
     gameState.letters.length / tilesPerPage
   );
- 
+
   // If empty or a single page, hide navigation
   const navElement = document.querySelector(".tile-rack-nav");
   if (
@@ -1503,7 +1503,6 @@ function updateMobileTileRack(direction) {
         pageBulletList.push(pageBulletInactive);
       }
     }
-
 
     //change the radius here from 0.5rem into 0.75 rem
 

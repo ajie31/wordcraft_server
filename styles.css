@@ -334,7 +334,7 @@ body {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
   justify-content: start;
-  min-height: 170px;
+  min-height: 334px;
   width: 100%;
   position: relative;
   /* Prevent rack background from being draggable */
