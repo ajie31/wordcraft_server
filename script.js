@@ -3179,6 +3179,9 @@ function setupButtons() {
   document.getElementById("rulesBtn").addEventListener("click", () => {
     document.getElementById("rulesModal").classList.add("active");
   });
+  document.getElementById("rulesBtnL").addEventListener("click", () => {
+    document.getElementById("rulesModal").classList.add("active");
+  });
 
   // Close rules button
   document.getElementById("closeRulesBtn").addEventListener("click", () => {
