@@ -286,8 +286,8 @@ body {
 .board-cell::before {
   content: attr(data-bonus);
   position: relative;
-  font-size: 0.6rem;
-  font-weight: normal;
+  font-size: 1.126rem;
+  font-weight: bold;
   color: rgba(0, 0, 0, 0.6);
   text-align: center;
   opacity: 0.8;
@@ -328,7 +328,7 @@ body {
 }
 .board-cell.drop-hover {
   background-color: var(--hover-color);
-  transform: scale(1.05);
+
   box-shadow: 0 0 10px rgba(58, 134, 255, 0.5);
   z-index: 5;
 }
@@ -824,6 +824,9 @@ body {
   background-color: var(--tile-placed);
   position: absolute;
   margin: 0;
+}
+.tile.placed:hover {
+  transform: scale(1.05);
 }
 .placed .power-indicator {
   position: absolute;
