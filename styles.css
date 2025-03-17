@@ -15,19 +15,23 @@
   --special-tw: #e76f51;
   --center-square: #ffd166;
   --rack-bg: #edf2f4;
+  --dw-font-color: #ab6453;
+  --dl-font-color: #5ca8ba;
+  --TW-font-color: #863622;
+  --tl-font-color: #05404e;
   --hover-color: rgba(58, 134, 255, 0.3);
   --wild-color: linear-gradient(135deg, #6940cc 0%, #627abc 100%);
   --powerup-color: linear-gradient(135deg, #64a536 0%, #83ce4e 100%);
-  --background-tile-area: linear-gradient(180deg, #ebf6fc 0%, #bddbe0 100%);
+  --background-tile-area: linear-gradient(180deg, #ebf6fc 0%, #bacfd2 100%);
   --background-tile-area-moz: -moz-linear-gradient(
     180deg,
     #ebf6fc 0%,
-    #bddbe0 100%
+    #bacfd2 100%
   );
   --background-tile-area-webkit: -webkit-linear-gradient(
     180deg,
     #ebf6fc 0%,
-    #bddbe0 100%
+    #bacfd2 100%
   );
 
   --invalid-word-color: #e63946;
@@ -293,6 +297,18 @@ body {
   content: "★";
   font-size: 1.5rem;
   opacity: 0.2;
+}
+.board-cell.dw::before {
+  color: var(--dw-font-color);
+}
+.board-cell.dl::before {
+  color: var(--dl-font-color);
+}
+.board-cell.tw::before {
+  color: var(--TW-font-color);
+}
+.board-cell.tl::before {
+  color: var(--tl-font-color);
 }
 
 .board-cell.dl {

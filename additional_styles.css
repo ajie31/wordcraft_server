@@ -800,9 +800,12 @@ button.overlay-menu {
   }
 }
 
-@media (max-width: 359px) {
+@media (max-width: 360px) {
   .game-header .score-display {
-    margin-left: 1.75rem;
+    margin-left: 1rem;
+  }
+  .game-header .header-button-group {
+    gap: 0.25rem;
   }
   .game-header {
     justify-content: start;

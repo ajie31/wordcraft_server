@@ -933,8 +933,10 @@ function setupExtraMobileHandlers() {
 
   // Show the interaction mode toggle for mobile users
   const mobileToggle = document.getElementById("mobileInteractionToggle");
-  if (gameState.isMobileDevice) {
+  if (gameState.isMobileDevice && window.innerWidth > 768) {
     mobileToggle.style.display = "flex"; //display from flex to none for now according to design
+  } else {
+    mobileToggle.style.display = "none";
   }
 
   // Load previous mode preference
