@@ -1,3 +1,6 @@
+#mobileInteractionToggle {
+  display: none;
+}
 /* mobile menu updates */
 button.overlay-menu {
   position: fixed;
@@ -6,8 +9,10 @@ button.overlay-menu {
   height: 100vh;
 
   display: none;
-  background-color: #000000;
-  opacity: 0.23;
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.23);
+  backdrop-filter: blur(5px);
+
   /* border: 2px solid #b1b1b1; */
   border: none;
 
@@ -65,7 +70,8 @@ button.overlay-menu {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
+  justify-content: end;
   margin-left: 1rem;
   flex-basis: 57%;
 }
@@ -221,6 +227,8 @@ button.overlay-menu {
 
   .header-button-group {
     flex-basis: 62%;
+    gap: 1rem;
+    justify-content: space-around;
   }
 }
 
@@ -294,6 +302,8 @@ button.overlay-menu {
     font-weight: 700;
     box-shadow: none;
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .mobile-device {
@@ -505,7 +515,8 @@ button.overlay-menu {
   }
   /* game controller button */
   .game-controls-mobile {
-    justify-content: space-around;
+    justify-content: center;
+    gap: 1rem;
   }
   /* advertise style here */
   .ads-wrap {
@@ -783,6 +794,9 @@ button.overlay-menu {
   }
   .game-header .score-display {
     margin-left: 10%;
+  }
+  #submitBtn {
+    padding: 0.75rem 1.5rem;
   }
 }
 

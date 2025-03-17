@@ -933,9 +933,9 @@ function setupExtraMobileHandlers() {
 
   // Show the interaction mode toggle for mobile users
   const mobileToggle = document.getElementById("mobileInteractionToggle");
-  // if (mobileToggle) {
-  //   mobileToggle.style.display = "none"; //display from flex to none for now according to design
-  // }
+  if (gameState.isMobileDevice) {
+    mobileToggle.style.display = "flex"; //display from flex to none for now according to design
+  }
 
   // Load previous mode preference
   const savedMode = localStorage.getItem("interactionMode") || "tap";
@@ -1347,6 +1347,7 @@ function setupPaginatedTileRack() {
   prevBtn.addEventListener("click", function () {
     navigateTileRack(-1);
   });
+
   // add arrow icon to previous button
   let svgElementArrow = `
   <svg  viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1362,6 +1363,7 @@ function setupPaginatedTileRack() {
   nextBtn.addEventListener("click", function () {
     navigateTileRack(1);
   });
+
   // add arrow icon to next button
   svgElementArrow = `
   <svg  viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
