@@ -269,6 +269,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Load saved stats and achievements
   loadPlayerData();
+  if (gameState.isMobileDevice && screen.width <= 768) {
+    document.getElementById("tileAreaDesktop").remove();
+  } else if (gameState.isMobileDevice && screen.width > 768) {
+    document.getElementById("tileAreaMobile").remove();
+  } else {
+    document.getElementById("tileAreaMobile").remove();
+  }
 
   // Load the word list
   await loadWordList();

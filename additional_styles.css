@@ -1,6 +1,9 @@
 #mobileInteractionToggle {
   display: none;
 }
+.tile-area.tile-area-mobile {
+  display: none;
+}
 /* mobile menu updates */
 button.overlay-menu {
   position: fixed;
@@ -653,9 +656,23 @@ button.overlay-menu {
     gap: 1rem;
     justify-content: space-around;
   }
+  .tile-area {
+    flex-basis: 56%;
+  }
 }
 
 @media (max-width: 768px) {
+  body {
+    background-color: white;
+  }
+  .game-container {
+    box-shadow: none;
+  }
+  .game-area {
+    height: 75vh;
+    box-shadow: none;
+    justify-content: flex-start;
+  }
   .mobile-nav-menu {
     right: 0;
     top: 42px;
@@ -808,6 +825,11 @@ button.overlay-menu {
     background: var(--background-tile-area-webkit);
     background: var(--background-tile-area);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ebf6fc",endColorstr="#bddbe0",GradientType=1);
+  }
+  .tile-area.tile-area-mobile {
+    display: flex;
+    position: absolute;
+    bottom: 0;
   }
   .page-letter-wrap {
     order: 2;
@@ -976,11 +998,15 @@ button.overlay-menu {
   /* advertise style here */
 
   .ads-wrap {
+    width: 100%;
     display: flex;
     justify-content: center;
     height: 51px;
     padding: 0;
+    padding-top: 0.5rem;
+    margin-top: 1rem;
     background-color: #bacfd2;
+    order: 5;
   }
   .ads-content {
     height: 50px;
@@ -1243,8 +1269,7 @@ button.overlay-menu {
     justify-content: center;
     width: 100%;
     height: 51px;
-    padding: 0 0;
-    padding-bottom: 12px;
+
     background-color: #bacfd2;
   }
   .ads-content {
@@ -1369,5 +1394,20 @@ button.overlay-menu {
   }
   #finishGameModal .nickname-input-container > button {
     font-size: 12.5px;
+  }
+}
+
+/* media query for height */
+@media (max-aspect-ratio: 7/10) {
+  body {
+    background: white;
+  }
+  .tile-area.tile-area-mobile {
+    position: static;
+  }
+  .game-area {
+    height: auto;
+    padding-bottom: 2rem;
+    box-shadow: none;
   }
 }
