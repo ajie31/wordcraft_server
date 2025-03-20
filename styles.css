@@ -854,8 +854,8 @@ body {
   /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
   /* width: calc((100vw - 40px) / 11.58);  Changed from 7 to 5 */
   /* height: calc((100vw - 40px) / 11.58);  Changed from 7 to 5 */
-  width: 5.35rem;
-  height: 5.35rem;
+  width: 7.35rem;
+  height: 7.35rem;
   font-size: 2.55em;
   background-color: var(--tile-placed);
   position: absolute;
@@ -2329,8 +2329,8 @@ button.highlight-element {
   .tile {
     width: calc((100vw - 40px) / 5 - 4px); /* Changed from 7 to 5 */
     height: calc((100vw - 40px) / 5 - 4px); /* Changed from 7 to 5 */
-    max-width: 70px; /* Increased from 60px for larger tiles */
-    max-height: 70px; /* Increased from 60px for larger tiles */
+    max-width: 74px; /* Increased from 60px for larger tiles */
+    max-height: 74px; /* Increased from 60px for larger tiles */
     font-size: calc(
       ((100vw - 40px) / 7) * 0.4
     ); /* Changed from 7 to 5 */ /* wirawan Change from 5 to 7 */

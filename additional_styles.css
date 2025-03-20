@@ -1044,8 +1044,8 @@ button.overlay-menu {
     gap: 0;
   }
   .tile.placed {
-    width: 3.56rem;
-    height: 3.56rem;
+    width: 3.9rem;
+    height: 3.9rem;
   }
   .letter-rack {
     order: 2;
@@ -1288,8 +1288,8 @@ button.overlay-menu {
     width: 94%;
   }
   .tile.placed {
-    width: calc((100vw - 40px) / 6.5);
-    height: calc((100vw - 40px) / 6.5);
+    width: calc((100vw - 40px) / 6);
+    height: calc((100vw - 40px) / 6);
   }
 
   /* modals finished game */
@@ -1341,8 +1341,8 @@ button.overlay-menu {
     min-width: 48px;
   }
   .tile.placed {
-    width: calc((100vw - 40px) / 6.5);
-    height: calc((100vw - 40px) / 6.5);
+    width: calc((100vw - 40px) / 5.9);
+    height: calc((100vw - 40px) / 5.9);
   }
   .game-header .score-display {
     margin-left: 10%;
@@ -1407,7 +1407,7 @@ button.overlay-menu {
   }
   .game-area {
     height: auto;
-    padding-bottom: 2rem;
+    padding-bottom: 0.5rem;
     box-shadow: none;
   }
 }
