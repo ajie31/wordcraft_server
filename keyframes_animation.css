@@ -1,0 +1,59 @@
+@keyframes mobilePulsate {
+  0% {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color), 0 1.5px 10px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    border-color: #ff9800;
+    box-shadow: 0 0 4px #ff9800, 0 3px 15px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color), 0 1.5px 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes boardTilePulsate {
+  0% {
+    border-color: #ff6700;
+    box-shadow: 0 0 0 3px #ff6700, 0 0 6px 5px rgba(255, 103, 0, 0.6);
+    transform: scale(1); /* wirawan change scale from 1.25 to 1*/
+  }
+  50% {
+    border-color: #ffcc00;
+    box-shadow: 0 0 0 3px #ffcc00, 0 0 8px 8px rgba(255, 204, 0, 0.8);
+    transform: scale(1.125); /* wirawan change scale from 1.3 to 1.125*/
+  }
+  100% {
+    border-color: #ff6700;
+    box-shadow: 0 0 0 3px #ff6700, 0 0 6px 5px rgba(255, 103, 0, 0.6);
+    transform: scale(1); /* wirawan change scale from 1.25 to 1*/
+  }
+}
+@keyframes shakyRotate {
+  0% {
+    transform: rotate(0deg) scale(1.2); /* Scale remains at 1.2 */
+    transform-origin: 50% 50%;
+  }
+  5% {
+    transform: rotate(3deg) scale(1.2); /* Softer, more frequent shake */
+  }
+  10% {
+    transform: rotate(-6deg) scale(1.2);
+  }
+  15% {
+    transform: rotate(6deg) scale(1.2);
+  }
+  20% {
+    transform: rotate(-3deg) scale(1.2);
+  }
+  25% {
+    transform: rotate(3deg) scale(1.2);
+  }
+  30% {
+    transform: rotate(0deg) scale(1.2); /* Smooth back to neutral */
+  }
+  50% {
+    transform: rotate(0deg) scale(1.2); /* Hold here at the end */
+  }
+}

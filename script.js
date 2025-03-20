@@ -3281,7 +3281,7 @@ function setupButtons() {
   // Share score button
   document.getElementById("shareScoreBtn").addEventListener("click", () => {
     const score = document.getElementById("finalScore").textContent;
-    const shareText = `I scored ${score} points in today's WordCraft challenge! Can you beat my score? Play at [game URL]`;
+    const shareText = `I scored ${score} points in today's Letter Links challenge! Can you beat my score? Play at [game URL]`;
 
     // Copy to clipboard
     navigator.clipboard
@@ -3366,7 +3366,7 @@ function showFinishGameModal(score) {
   gameState.score = validatedScore;
 
   // Fill in the final score
-  document.getElementById("finalScore").textContent = validatedScore;
+  document.getElementById("finalScore").textContent = validatedScore + " pts";
 
   // Initialize the leaderboard UI
   initializeLeaderboard();
@@ -4741,7 +4741,7 @@ function initIntroJS() {
       {
         element: document.querySelector(".game-container"),
         intro:
-          "Welcome to WordCraft! This word-building game gives you a daily challenge to create words on a game board, similar to Scrabble. You'll receive a set of letter tiles and need to arrange them strategically to score points.",
+          "Welcome to Letter Links! This word-building game gives you a daily challenge to create words on a game board, similar to Scrabble. You'll receive a set of letter tiles and need to arrange them strategically to score points.",
         position: "right",
       },
       {
@@ -4827,7 +4827,7 @@ function showWelcomeModal() {
 // Define tutorial steps with UI highlights and animations
 const tutorialSteps = [
   {
-    text: "Welcome to WordCraft! This word-building game gives you a daily challenge to create words on a game board, similar to Scrabble. You'll receive a set of letter tiles and need to arrange them strategically to score points.",
+    text: "Welcome to Letter Links! This word-building game gives you a daily challenge to create words on a game board, similar to Scrabble. You'll receive a set of letter tiles and need to arrange them strategically to score points.",
     highlights: [],
   },
   {
@@ -5334,8 +5334,15 @@ function updateLeaderboardCountdown() {
     .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 
   const countdownElement = document.getElementById("leaderboardCountdown");
+  const hourCountdown = document.getElementById("hourCountDown");
+  const minuteCountdown = document.getElementById("minuteCountDown");
+  const secondrCountdown = document.getElementById("secondCountDown");
+
   if (countdownElement) {
-    countdownElement.textContent = timeString;
+    // countdownElement.textContent = timeString;
+    hourCountdown.textContent = hours.toString().padStart(2, "0");
+    minuteCountdown.textContent = minutes.toString().padStart(2, "0");
+    secondrCountdown.textContent = seconds.toString().padStart(2, "0");
   }
 
   // Only schedule next update if the leaderboard is visible
