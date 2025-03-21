@@ -741,6 +741,7 @@ button.overlay-menu {
   body {
     background-color: white;
     flex-direction: column;
+    gap: 0;
   }
   .game-container {
     box-shadow: none;
