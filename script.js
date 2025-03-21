@@ -3173,6 +3173,20 @@ function animateBonusTiles() {
 // Setup buttons
 function setupButtons() {
   // Start game button
+  let parent = document.getElementById("welcomeModal");
+  let child = parent.querySelector(".modal-content");
+  parent.addEventListener("click", () => {
+    document.getElementById("welcomeModal").classList.remove("active");
+
+    // Start the bonus tile animation
+    if (gameState.needBonusAnimation) {
+      animateBonusTiles();
+    }
+  });
+  child.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
+
   document.getElementById("startGameBtn").addEventListener("click", () => {
     document.getElementById("welcomeModal").classList.remove("active");
 
@@ -3183,6 +3197,7 @@ function setupButtons() {
   });
 
   // Rules button
+
   document.getElementById("rulesBtn").addEventListener("click", () => {
     document.getElementById("rulesModal").classList.add("active");
   });
@@ -3191,6 +3206,16 @@ function setupButtons() {
   });
 
   // Close rules button
+
+  parent = document.getElementById("rulesModal");
+  child = parent.querySelector(".modal-content");
+
+  parent.addEventListener("click", () => {
+    document.getElementById("rulesModal").classList.remove("active");
+  });
+  child.addEventListener("click", (event) => {
+    event.stopPropagation();
+  });
   document.getElementById("closeRulesBtn").addEventListener("click", () => {
     document.getElementById("rulesModal").classList.remove("active");
   });
