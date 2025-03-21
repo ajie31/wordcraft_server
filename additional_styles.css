@@ -52,7 +52,7 @@ button.overlay-menu {
 .game-header .score-display {
   background-color: #6db13d;
   color: #fff;
-  min-width: 118px;
+  min-width: 92px;
   justify-content: flex-start;
   gap: 0.5rem;
   padding: 0.25rem 0.75rem;
@@ -100,6 +100,18 @@ button.overlay-menu {
 .mobile-interaction-toggle .interaction-btn-wrap {
   background-color: var(--secondary-header-color);
   border-radius: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 221px;
+}
+.mobile-interaction-toggle .interaction-btn {
+  color: #8e8e8e;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-interaction-toggle .interaction-btn.active {
+  color: #fff;
 }
 .input-mode-label {
   font-size: 0.75em;
