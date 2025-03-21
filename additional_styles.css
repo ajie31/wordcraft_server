@@ -1356,6 +1356,7 @@ button.overlay-menu {
   #finishGameModal .modal-content {
     position: absolute;
     max-width: 89vw;
+    max-height: 70vh;
     padding: 3rem 1.5rem;
     border-radius: 32px;
     border-bottom-left-radius: 0;
