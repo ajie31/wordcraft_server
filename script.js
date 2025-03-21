@@ -5249,6 +5249,26 @@ function calculateWordScore(tiles) {
 function updateScoreDisplay(newScore) {
   const scoreElement = document.querySelector(".score-value");
   const scoreDiff = newScore - gameState.previousScore;
+  const scoreDisplay = document.querySelector(".game-header .score-display");
+  const scoreContainer = document.querySelector(
+    ".game-header .score-display .score-container"
+  );
+
+  document
+    .querySelector(".game-header .score-display .score-container")
+    .classList.add("scale-up");
+  document
+    .querySelector(".game-header .score-display")
+    .classList.add("scale-dn");
+
+  setTimeout(() => {
+    document
+      .querySelector(".game-header .score-display .score-container")
+      .classList.remove("scale-up");
+    document
+      .querySelector(".game-header .score-display")
+      .classList.remove("scale-dn");
+  }, 320);
 
   // Only update display if score changed
   if (newScore !== gameState.previousScore) {
