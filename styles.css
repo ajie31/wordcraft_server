@@ -37,7 +37,13 @@
     #ebf6fc 0%,
     #bacfd2 100%
   );
-
+  --gradient-primary: linear-gradient(0deg, #eca64f 0%, #e48b06 100%);
+  --gradient-primary-moz: -moz-linear-gradient(0deg, #eca64f 0%, #e48b06 100%);
+  --gradient-primary-webkit: -webkit-linear-gradient(
+    0deg,
+    #eca64f 0%,
+    #e48b06 100%
+  );
   --invalid-word-color: #e63946;
   --valid-word-color: #77bd45;
   --achievement-color: #ffd700;

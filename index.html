@@ -6,7 +6,12 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <title>Letter Links</title>
+    <title>LetterLinks</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="src/icons/fav-icon-letterLink.png"
+    />
     <link rel="stylesheet" href="styles.css?v=1.0.2" />
     <!-- IntroJS CSS -->
     <link
@@ -95,13 +100,13 @@
 
     <div
       class="game-container"
-      data-intro="Welcome to Letter Links! This word-building game gives you a daily challenge to create words on a game board, similar to Scrabble. You'll receive a set of letter tiles and need to arrange them strategically to score points."
+      data-intro="Welcome to LetterLinks! This word-building game gives you a daily challenge to create words on a game board, similar to Scrabble. You'll receive a set of letter tiles and need to arrange them strategically to score points."
       data-step="1"
     >
       <div class="game-header">
         <div class="logo-score-group">
           <div class="display-logo">
-            <img src="src/icons/wordcraft_logo.svg" alt="wordcraft_logo" />
+            <img src="src/icons/letterLink-logo.svg" alt="wordcraft_logo" />
           </div>
           <div class="score-display">
             <span class="score-text">Score</span
@@ -366,7 +371,7 @@
     <!-- Modals -->
     <div class="modal" id="welcomeModal">
       <div class="modal-content">
-        <h2 class="modal-title">Welcome to Letter Links!</h2>
+        <h2 class="modal-title">Welcome to LetterLinks!</h2>
         <p class="modal-text">
           Create words on the board using your daily letter tiles. Arrange them
           strategically to score the most points!
@@ -395,7 +400,7 @@
         <p>You can drag tiles or click to select and place them.</p>
         <div class="modal-buttons">
           <button class="btn btn-primary" id="startGameBtn">
-            Start Playing
+            START PLAYING
           </button>
         </div>
       </div>
@@ -404,12 +409,12 @@
     <!-- Tutorial Modal -->
     <div class="tutorial-modal" id="tutorialModal">
       <div class="tutorial-content">
-        <h2 class="tutorial-title">Letter Links Tutorial</h2>
+        <h2 class="tutorial-title">LetterLinks Tutorial</h2>
         <div class="tutorial-steps">
           <!-- Step 1: Introduction -->
           <div class="tutorial-step" data-step="1">
             <div class="tutorial-text">
-              Welcome to Letter Links! This word-building game gives you a daily
+              Welcome to LetterLinks! This word-building game gives you a daily
               challenge to create words on a game board, similar to Scrabble.
               You'll receive a set of letter tiles and need to arrange them
               strategically to score points.
@@ -501,7 +506,7 @@
         <div class="modal-content">
           <h2 class="modal-title">How to Play</h2>
           <p class="modal-text">
-            Letter Links is a daily word-building challenge.
+            LetterLinks is a daily word-building challenge.
           </p>
           <ul class="rules-list">
             <li>
@@ -626,8 +631,10 @@
         </p>
 
         <div class="modal-buttons">
-          <button class="btn" id="cancelSubmitBtn">Cancel</button>
-          <button class="btn btn-primary" id="confirmSubmitBtn">Submit</button>
+          <button class="btn" id="cancelSubmitBtn">CANCEL</button>
+          <button class="btn btn-primary" id="confirmSubmitBtn">
+            SUBMIT WORDS
+          </button>
         </div>
       </div>
     </div>
@@ -651,7 +658,7 @@
         <h2 class="modal-title">Game Completed!</h2>
         <div class="finish-game-container">
           <p class="final-message">
-            Your final score for today's <b>Letter Links</b> challenge:
+            Your final score for today's <b>LetterLinks</b> challenge:
           </p>
           <div class="final-score" id="finalScore">0</div>
 
