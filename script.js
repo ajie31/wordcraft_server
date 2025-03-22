@@ -969,7 +969,7 @@ function setupExtraMobileHandlers() {
     });
 
   // COMPLETELY NEW APPROACH USING GLOBAL EVENT CAPTURING
-
+  const prefabTile = document.getElementById("tilePrefab");
   // Set up touch tracking - but don't interfere with standard touch behavior yet
   document.addEventListener(
     "touchstart",
@@ -984,6 +984,30 @@ function setupExtraMobileHandlers() {
       touchData.currentY = touchData.startY;
       touchData.isDragging = false;
       touchData.touchStartTime = Date.now();
+
+      if (e.target.classList.contains("tile")) {
+        const letter = e.target.dataset.letter;
+        prefabTile.style.transition = "scale 1.3s ease;";
+        prefabTile.style.display = "flex";
+        prefabTile.style.scale = ".9";
+        prefabTile.style.left = `${touchData.currentX}px`;
+        prefabTile.style.top = `${touchData.currentY}px`;
+        prefabTile.childNodes[0].nodeValue = letter;
+        prefabTile.querySelector(".power-indicator").style.display = "none";
+        prefabTile.querySelector(".tile-value").textContent =
+          gameState.letterValues[letter];
+        if (e.target.dataset.bonus) {
+          prefabTile.querySelector(".power-indicator").style.display = "flex";
+          prefabTile.classList.add("powerup");
+        } else {
+          prefabTile.classList.remove("powerup");
+        }
+        if (e.target.dataset.letter == "*") {
+          prefabTile.classList.add("wild");
+        } else {
+          prefabTile.classList.remove("wild");
+        }
+      }
 
       // IMPORTANT: Don't establish any touchedTile or selection yet
       // We'll wait to see if this is a drag or a tap
@@ -1027,7 +1051,8 @@ function setupExtraMobileHandlers() {
       if (interactionMode.mode !== "drag") {
         return; // Exit early if not in drag mode
       }
-
+      prefabTile.style.left = `${touchData.currentX}px`;
+      prefabTile.style.top = `${touchData.currentY}px`;
       // Calculate distance moved
       const deltaX = touchData.currentX - touchData.startX;
       const deltaY = touchData.currentY - touchData.startY;
@@ -1116,7 +1141,8 @@ function setupExtraMobileHandlers() {
           "isDragging:",
           touchData.isDragging
         );
-
+        prefabTile.style.display = "none";
+        prefabTile.style.scale = "1.125";
         // Find what element was under the touch when it ended
         const endX = e.changedTouches[0].clientX;
         const endY = e.changedTouches[0].clientY;
@@ -1423,11 +1449,11 @@ function setupPaginatedTileRack() {
       if (Math.abs(diffX) > 50) {
         // Swipe right (previous page)
         if (diffX > 0) {
-          navigateTileRack(-1);
+          navigateTileRack(1);
         }
         // Swipe left (next page)
         else {
-          navigateTileRack(1);
+          navigateTileRack(-1);
         }
       }
     },
