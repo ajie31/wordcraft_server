@@ -10,7 +10,7 @@
   max-width: 56px;
   max-height: 56px;
   pointer-events: none;
-  transform: translate(-50%, -50%);
+  transform: translate(-70%, -70%);
   scale: 1.125;
 }
 #tilePrefab .power-indicator {
