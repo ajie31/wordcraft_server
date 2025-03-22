@@ -992,7 +992,7 @@ function setupExtraMobileHandlers() {
         const letter = e.target.dataset.letter;
         prefabTile.style.transition = "scale 1.3s ease;";
         prefabTile.style.display = "flex";
-        prefabTile.style.scale = "1.9";
+        prefabTile.style.scale = "1.3";
         prefabTile.style.left = `${touchData.currentX}px`;
         prefabTile.style.top = `${touchData.currentY}px`;
         prefabTile.childNodes[0].nodeValue = letter;
