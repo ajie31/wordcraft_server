@@ -985,7 +985,10 @@ function setupExtraMobileHandlers() {
       touchData.isDragging = false;
       touchData.touchStartTime = Date.now();
 
-      if (e.target.classList.contains("tile")) {
+      if (
+        e.target.classList.contains("tile") &&
+        interactionMode.mode === "drag"
+      ) {
         const letter = e.target.dataset.letter;
         prefabTile.style.transition = "scale 1.3s ease;";
         prefabTile.style.display = "flex";
@@ -1141,8 +1144,7 @@ function setupExtraMobileHandlers() {
           "isDragging:",
           touchData.isDragging
         );
-        prefabTile.style.display = "none";
-        prefabTile.style.scale = "1.125";
+
         // Find what element was under the touch when it ended
         const endX = e.changedTouches[0].clientX;
         const endY = e.changedTouches[0].clientY;
@@ -1164,7 +1166,8 @@ function setupExtraMobileHandlers() {
           gameState.touchedTile
         ) {
           console.log("DRAG MODE: FINISHING DRAG OPERATION");
-
+          prefabTile.style.display = "none";
+          prefabTile.style.scale = "1.125";
           // Find elements at the touch end position
           const elementsUnderTouch = document.elementsFromPoint(endX, endY);
           const cellUnderTouch = elementsUnderTouch.find((el) =>
