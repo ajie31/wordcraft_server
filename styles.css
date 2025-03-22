@@ -589,7 +589,7 @@ body {
 
 .btn:disabled {
   background-color: #e9ecef;
-  color: #adb5bd;
+  opacity: 0.65;
   cursor: not-allowed;
   transform: none;
   box-shadow: none;

@@ -992,7 +992,7 @@ function setupExtraMobileHandlers() {
         const letter = e.target.dataset.letter;
         prefabTile.style.transition = "scale 1.3s ease;";
         prefabTile.style.display = "flex";
-        prefabTile.style.scale = ".9";
+        prefabTile.style.scale = "1.9";
         prefabTile.style.left = `${touchData.currentX}px`;
         prefabTile.style.top = `${touchData.currentY}px`;
         prefabTile.childNodes[0].nodeValue = letter;
@@ -1154,6 +1154,8 @@ function setupExtraMobileHandlers() {
         const allTiles = document.querySelectorAll(
           ".tile.touch-active, .tile.dragging"
         );
+        prefabTile.style.display = "none";
+        prefabTile.style.scale = "1.125";
         allTiles.forEach((tile) => {
           tile.classList.remove("touch-active");
           tile.classList.remove("dragging");
@@ -1166,8 +1168,7 @@ function setupExtraMobileHandlers() {
           gameState.touchedTile
         ) {
           console.log("DRAG MODE: FINISHING DRAG OPERATION");
-          prefabTile.style.display = "none";
-          prefabTile.style.scale = "1.125";
+
           // Find elements at the touch end position
           const elementsUnderTouch = document.elementsFromPoint(endX, endY);
           const cellUnderTouch = elementsUnderTouch.find((el) =>
