@@ -157,7 +157,7 @@
             How to Play
           </button>
           <div class="btn-maximize-display">
-            <button>
+            <button onclick="toggleFullscreen()">
               <span class="material-symbols-outlined">crop_free</span>
             </button>
           </div>
@@ -850,6 +850,26 @@
     <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore-compat.js"></script>
 
     <script>
+      // full screen button
+      function toggleFullscreen() {
+        const body = document.body; // Target the <body> element
+        if (!document.fullscreenElement) {
+          if (body.requestFullscreen) {
+            body.requestFullscreen();
+          } else if (body.webkitRequestFullscreen) {
+            // Safari
+            body.webkitRequestFullscreen();
+          } else if (body.msRequestFullscreen) {
+            // IE/Edge
+            body.msRequestFullscreen();
+          }
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          }
+        }
+      }
+
       // menu mobile controller
 
       function toggleMenu() {
